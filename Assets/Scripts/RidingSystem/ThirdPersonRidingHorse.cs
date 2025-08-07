@@ -11,7 +11,7 @@ public class ThirdPersonRidingHorse : MonoBehaviour
     public bool isOnHorse = false;
 
     [Header("相机设置")]
-    [SerializeField] CameraController cameraController; // 相机控制器引用
+    [SerializeField] CameraMainController cameraController; // 相机控制器引用
 
     [Header("动画参数")]
     public int mountLayerIndex = 3;
@@ -38,7 +38,7 @@ public class ThirdPersonRidingHorse : MonoBehaviour
         // 如果没有手动设置相机控制器，自动查找
         if (cameraController == null)
         {
-            cameraController = FindObjectOfType<CameraController>();
+            cameraController = FindObjectOfType<CameraMainController>();
         }
     }
 

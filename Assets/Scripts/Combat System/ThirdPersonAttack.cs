@@ -12,14 +12,12 @@ public class ThirdPersonAttack : MonoBehaviour
 
 
     Animator animator;
-    ThirdPersonMove thirdPersonMove;
-    CharacterController characterController;
+    //CharacterController characterController;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
-        thirdPersonMove = GetComponent<ThirdPersonMove>();
-        characterController = GetComponent<CharacterController>();
+        //characterController = GetComponent<CharacterController>();
     }
 
     //攻击类输入存储值，会被新的输入值覆盖
@@ -84,15 +82,13 @@ public class ThirdPersonAttack : MonoBehaviour
 
     void Update()
     {
-        if (!characterController.isGrounded)
-            return;
+        //if (!characterController.isGrounded)
+        //    return;
         //动画时长计时器帧自减
         animTimer -= Time.deltaTime;
         if(animTimer <= 0)
         {
             //动画播放完毕
-            //恢复输入
-            //thirdPersonMove.inputEnabled = true;
             //连招数归零
             currentAttack = 0;
             currentLightAttack = 0;

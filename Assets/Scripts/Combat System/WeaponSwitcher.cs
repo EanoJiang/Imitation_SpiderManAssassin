@@ -22,7 +22,7 @@ public class WeaponSwitcher : MonoBehaviour
     
     private GameObject currentWeapon; // 当前武器实例
     private int combatLayerIndex; // Combat层级索引
-    private bool hasWeapon = true; // 默认状态是有武器的
+    private bool hasWeapon = true; // 默认状态
     private bool isAnimating = false; // 是否正在播放动画
     private Vector3 equippedPosition; // 武器装备时的位置（手部位置）
     private Quaternion equippedRotation; // 武器装备时的旋转（手部旋转）
@@ -96,6 +96,7 @@ public class WeaponSwitcher : MonoBehaviour
         {
             ToggleWeapon();
         }
+        animator.SetBool("hasWeapon", !hasWeapon);
     }
     
     /// <summary>
@@ -104,7 +105,7 @@ public class WeaponSwitcher : MonoBehaviour
     void ToggleWeapon()
     {
         if (isAnimating) return; // 如果正在播放动画，忽略输入
-        
+
         if (hasWeapon)
         {
             // 播放收起武器动画
@@ -114,6 +115,7 @@ public class WeaponSwitcher : MonoBehaviour
         {
             // 播放装备武器动画
             StartCoroutine(EquipWeaponWithAnimation());
+
         }
     }
     
@@ -215,7 +217,7 @@ public class WeaponSwitcher : MonoBehaviour
         currentWeapon.transform.localRotation = equippedRotation;
         
         hasWeapon = true;
-        
+
         // 启用Combat层级动画
         EnableCombatLayer(true);
         
@@ -236,7 +238,7 @@ public class WeaponSwitcher : MonoBehaviour
         }
         
         hasWeapon = false;
-        
+
         // 禁用Combat层级动画
         EnableCombatLayer(false);
         

@@ -9,6 +9,10 @@ TagManager:
   - Box
   - MountTrigger
   - Animal
+  - Ignore Ragdoll
+  - NarrowBeam
+  - SwingableLedge
+  - PlayerUI
   layers:
   - Default
   - TransparentFX
@@ -20,8 +24,8 @@ TagManager:
   - 
   - Player
   - FootTrigger
-  - 
-  - 
+  - Obstacles
+  - Ledge
   - 
   - 
   - 

@@ -130,10 +130,10 @@ public class ThirdPersonMove : MonoBehaviour
     /// <summary>
     /// 新版Input输入系统————移动
     /// </summary>
-    Vector2 moveAmount;
+    Vector2 moveInput;
     void OnMove(InputValue value)
     {
-        moveAmount = value.Get<Vector2>();
+        moveInput = value.Get<Vector2>();
 
     }
 
@@ -142,10 +142,10 @@ public class ThirdPersonMove : MonoBehaviour
     /// </summary>
     private void FreeMove()
     {
-        if (moveAmount != Vector2.zero)
+        if (moveInput != Vector2.zero)
         {
             // 计算水平方向输入方向，将其转换为世界空间坐标系——x和z是水平坐标轴
-            Vector3 inputDir = new Vector3(moveAmount.x, 0.0f, moveAmount.y).normalized;
+            Vector3 inputDir = new Vector3(moveInput.x, 0.0f, moveInput.y).normalized;
             // 计算目标朝向
             targetRotation = Mathf.Atan2(inputDir.x, inputDir.z) * Mathf.Rad2Deg +
                                   mainCamera.transform.eulerAngles.y;
@@ -157,7 +157,7 @@ public class ThirdPersonMove : MonoBehaviour
         //Y轴输入值——只影响前进的速度控制，朝向由上面的if中的语句决定
         var axisY = animator.GetFloat("AxisY");
         //平滑过渡到Y轴目标值
-        axisY = Mathf.MoveTowards(axisY, moveAmount.magnitude, Time.deltaTime * 5f);
+        axisY = Mathf.MoveTowards(axisY, moveInput.magnitude, Time.deltaTime * 5f);
         animator.SetFloat("AxisY", axisY);
 
     }
@@ -197,8 +197,8 @@ public class ThirdPersonMove : MonoBehaviour
         var AxisX = animator.GetFloat("AxisX");
         var AxisY = animator.GetFloat("AxisY");
         //平滑改变轴向
-        AxisX = Mathf.MoveTowards(AxisX, moveAmount.x, Time.deltaTime * 5f);
-        AxisY = Mathf.MoveTowards(AxisY, moveAmount.y, Time.deltaTime * 5f);
+        AxisX = Mathf.MoveTowards(AxisX, moveInput.x, Time.deltaTime * 5f);
+        AxisY = Mathf.MoveTowards(AxisY, moveInput.y, Time.deltaTime * 5f);
         //更新锁定移动动画参数
         animator.SetFloat("AxisX", AxisX);
         animator.SetFloat("AxisY", AxisY);

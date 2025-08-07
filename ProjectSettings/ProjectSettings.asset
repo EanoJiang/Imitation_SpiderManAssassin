@@ -807,7 +807,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: inputsystem
+    Standalone: inputsystem;ENABLE_MMLC;INVECTOR_BASIC;INVECTOR_MELEE;INVECTOR_SHOOTER
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

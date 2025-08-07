@@ -16,12 +16,12 @@ public class CameraZoomController : MonoBehaviour
     [SerializeField] Text zoomHintText;           // 提示文本组件
 
     // 相机控制器引用
-    private CameraController cameraController;
+    private CameraMainController cameraController;
 
     private void Start()
     {
-        // 获取同一GameObject上的CameraController组件
-        cameraController = GetComponent<CameraController>();
+        // 获取同一GameObject上的CameraMainController组件
+        cameraController = GetComponent<CameraMainController>();
         
         // 初始化UI提示
         if (zoomHintPanel != null)
