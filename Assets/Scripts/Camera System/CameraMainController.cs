@@ -22,7 +22,6 @@ public class CameraMainController : MonoBehaviour
     // 鼠标灵敏度设置
     [Header("鼠标灵敏度设置")]
     [SerializeField] float mouseSensitivity = 2.0f;
-    [SerializeField] bool useRawInput = true; // 是否使用原始输入，避免系统鼠标加速影响
 
     //绕y轴的旋转角度——水平视角旋转
     float rotationY;
@@ -104,8 +103,8 @@ public class CameraMainController : MonoBehaviour
         invertYValue = (invertY) ? -1 : 1;
 
         // 获取鼠标输入，使用原始输入避免系统鼠标加速影响
-        float mouseX = useRawInput ? Input.GetAxisRaw("Mouse X") : Input.GetAxis("Camera X");
-        float mouseY = useRawInput ? Input.GetAxisRaw("Mouse Y") : Input.GetAxis("Camera Y");
+        float mouseX = GameInputManager.MainInstance.CameraLook.x;
+        float mouseY = GameInputManager.MainInstance.CameraLook.y;
 
         //水平视角控制——鼠标(手柄)x轴控制rotationY
         rotationY += mouseX * mouseSensitivity * invertYValue;

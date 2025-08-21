@@ -13,20 +13,24 @@ TagManager:
   - NarrowBeam
   - SwingableLedge
   - PlayerUI
+  - FootTrigger
+  - FreeClimb
+  - Weapon
+  - Hookable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Wall
+  - Camera
   - Player
   - FootTrigger
   - Obstacles
   - Ledge
-  - 
+  - Interactable
   - 
   - 
   - 

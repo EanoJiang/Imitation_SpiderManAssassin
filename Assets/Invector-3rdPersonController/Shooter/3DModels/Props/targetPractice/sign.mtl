@@ -1,6 +1,0 @@
-newmtl targetPractice
-map_Kd targetPractice.png
-bump metal_NRM.png
-Kd 1 1 1
-d 1
-

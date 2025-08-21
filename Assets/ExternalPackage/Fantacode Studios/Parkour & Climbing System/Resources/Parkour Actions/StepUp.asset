@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d124415d0e957e54192c67925215bfe7, type: 3}
+  m_Name: StepUp
+  m_EditorClassIdentifier: 
+  animName: StepUp
+  minHeight: 0.2
+  maxHeight: 0.3
+  rotateToObstacle: 1
+  vaultType: 2
+  obstacleTag: 
+  postActionDelay: 0
+  enableTargetMatching: 1
+  matchBodyPart: 3
+  matchStartTime: 0.2
+  matchTargetTime: 0.6
+  matchPosWeight: {x: 0, y: 1, z: 0}
+  clip: {fileID: 4665662130276301132, guid: dd601e4831062c44688f12f73387710a, type: 3}
+  minimumObstacleHorizontalDistance: 0
+  movementThreshold: 0
