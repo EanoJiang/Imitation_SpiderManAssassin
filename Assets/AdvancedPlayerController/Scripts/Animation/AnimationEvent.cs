@@ -9,7 +9,7 @@ namespace Spiderman.Event
         private void PlaySound(string _soundName)
         {
             //选取对象池中的音效对象
-            GamePoolManager.MainInstance.TryGetPoolItem(_soundName,transform.position,Quaternion.identity);
+            GamePoolManager.Instance.TryGetPoolItem(_soundName,transform.position,Quaternion.identity);
         }
     }
 

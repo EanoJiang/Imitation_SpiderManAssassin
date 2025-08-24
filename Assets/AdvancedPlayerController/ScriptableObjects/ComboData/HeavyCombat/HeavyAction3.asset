@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HeavyAction3
   m_EditorClassIdentifier: 
   _comboName: Heavy_Atk_3
-  _comboHitName: []
+  _comboHitName:
+  - HeadFront
   _comboParryName: []
   _damage: 1.2
   _coldTime: 1

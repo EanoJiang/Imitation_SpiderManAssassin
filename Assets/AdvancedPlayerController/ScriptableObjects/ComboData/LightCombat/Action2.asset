@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Action2
   m_EditorClassIdentifier: 
   _comboName: Light_Atk_2
-  _comboHitName: []
-  _comboParryName: []
+  _comboHitName:
+  - RightFace
+  _comboParryName:
+  - Parry_RightFace
   _damage: 0
   _coldTime: 0.3
   _comboPositionOffset: 0

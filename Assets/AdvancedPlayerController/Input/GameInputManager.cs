@@ -15,6 +15,9 @@ public class GameInputManager : Singleton<GameInputManager>
     public bool Jump => _gameInputAction.Player.Jump.triggered;
     public bool LAttack => _gameInputAction.Player.LAttack.triggered;
     public bool RAttack => _gameInputAction.Player.RAttack.triggered;
+    public bool FinishAttack => _gameInputAction.Player.FinishAttack.triggered;
+
+    public bool SwitchCharacter => _gameInputAction.Player.SwitchCharacter.triggered;
 
     protected override void Awake()
     {

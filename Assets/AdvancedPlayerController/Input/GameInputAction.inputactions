@@ -114,9 +114,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "FinishAttack",
+                    "type": "Button",
+                    "id": "f06a191d-98bc-4580-ab63-35d1845f6619",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "31bc2057-8063-4483-9033-4ab9d5193b7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchCharacter",
+                    "type": "Button",
+                    "id": "cb2093e4-470a-4573-a9b7-69ce0f4963b4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -594,6 +612,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "RAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df8ad779-5134-4c86-aae2-b84a599abb5e",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69d5fd68-cc81-4812-82f1-fd1e08a04020",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SwitchCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0362051-5484-4b2f-b131-dcd652350374",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "FinishAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21a9269f-68f1-43e6-ab6e-3c844db66ad9",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "FinishAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

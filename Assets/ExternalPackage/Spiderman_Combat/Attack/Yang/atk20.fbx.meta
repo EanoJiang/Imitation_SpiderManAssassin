@@ -62,15 +62,15 @@ ModelImporter:
       curves: []
       events:
       - time: 0.24242425
-        functionName: PlaySound
-        data: ATKSound
+        functionName: ATKEvent
+        data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.39090908
-        functionName: PlaySound
-        data: ATKSound
+        functionName: ATKEvent
+        data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

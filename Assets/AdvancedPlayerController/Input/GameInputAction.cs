@@ -136,9 +136,27 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""FinishAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""f06a191d-98bc-4580-ab63-35d1845f6619"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""31bc2057-8063-4483-9033-4ab9d5193b7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchCharacter"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb2093e4-470a-4573-a9b7-69ce0f4963b4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -616,6 +634,50 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""RAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""df8ad779-5134-4c86-aae2-b84a599abb5e"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SwitchCharacter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69d5fd68-cc81-4812-82f1-fd1e08a04020"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SwitchCharacter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0362051-5484-4b2f-b131-dcd652350374"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FinishAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21a9269f-68f1-43e6-ab6e-3c844db66ad9"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""FinishAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1215,7 +1277,9 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
         m_Player_CameraLook = m_Player.FindAction("CameraLook", throwIfNotFound: true);
         m_Player_LAttack = m_Player.FindAction("LAttack", throwIfNotFound: true);
         m_Player_RAttack = m_Player.FindAction("RAttack", throwIfNotFound: true);
+        m_Player_FinishAttack = m_Player.FindAction("FinishAttack", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_SwitchCharacter = m_Player.FindAction("SwitchCharacter", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1301,7 +1365,9 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CameraLook;
     private readonly InputAction m_Player_LAttack;
     private readonly InputAction m_Player_RAttack;
+    private readonly InputAction m_Player_FinishAttack;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_SwitchCharacter;
     public struct PlayerActions
     {
         private @GameInputAction m_Wrapper;
@@ -1318,7 +1384,9 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
         public InputAction @CameraLook => m_Wrapper.m_Player_CameraLook;
         public InputAction @LAttack => m_Wrapper.m_Player_LAttack;
         public InputAction @RAttack => m_Wrapper.m_Player_RAttack;
+        public InputAction @FinishAttack => m_Wrapper.m_Player_FinishAttack;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @SwitchCharacter => m_Wrapper.m_Player_SwitchCharacter;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1364,9 +1432,15 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
             @RAttack.started += instance.OnRAttack;
             @RAttack.performed += instance.OnRAttack;
             @RAttack.canceled += instance.OnRAttack;
+            @FinishAttack.started += instance.OnFinishAttack;
+            @FinishAttack.performed += instance.OnFinishAttack;
+            @FinishAttack.canceled += instance.OnFinishAttack;
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @SwitchCharacter.started += instance.OnSwitchCharacter;
+            @SwitchCharacter.performed += instance.OnSwitchCharacter;
+            @SwitchCharacter.canceled += instance.OnSwitchCharacter;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1407,9 +1481,15 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
             @RAttack.started -= instance.OnRAttack;
             @RAttack.performed -= instance.OnRAttack;
             @RAttack.canceled -= instance.OnRAttack;
+            @FinishAttack.started -= instance.OnFinishAttack;
+            @FinishAttack.performed -= instance.OnFinishAttack;
+            @FinishAttack.canceled -= instance.OnFinishAttack;
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @SwitchCharacter.started -= instance.OnSwitchCharacter;
+            @SwitchCharacter.performed -= instance.OnSwitchCharacter;
+            @SwitchCharacter.canceled -= instance.OnSwitchCharacter;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1604,7 +1684,9 @@ public partial class @GameInputAction: IInputActionCollection2, IDisposable
         void OnCameraLook(InputAction.CallbackContext context);
         void OnLAttack(InputAction.CallbackContext context);
         void OnRAttack(InputAction.CallbackContext context);
+        void OnFinishAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnSwitchCharacter(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

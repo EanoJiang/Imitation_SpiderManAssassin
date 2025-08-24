@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2166693410516960146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7633148470369381501}
+  - component: {fileID: 7317538340949821161}
+  m_Layer: 0
+  m_Name: GamePoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7633148470369381501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2166693410516960146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9126777, y: 0.24813934, z: 0.2398333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7317538340949821161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2166693410516960146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4369163c1fe412348a53607128d4758c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _configPoolItem:
+  - ItemName: ATKSound
+    Item: {fileID: 3876889317063714065, guid: d5ab48bef1ff2734b8145650ee432045, type: 3}
+    InitMaxCount: 10
+  - ItemName: HitSound
+    Item: {fileID: 3876889317063714065, guid: 91ee60bc00666634eabb303d17d1dac7, type: 3}
+    InitMaxCount: 10
+  - ItemName: BlockSound
+    Item: {fileID: 3876889317063714065, guid: 6a36c33e6decdb44d957684bdd12ccc7, type: 3}
+    InitMaxCount: 10
+  - ItemName: FootSound
+    Item: {fileID: 3876889317063714065, guid: 2d9d63719686e2a4d9d197897ea41b4e, type: 3}
+    InitMaxCount: 10

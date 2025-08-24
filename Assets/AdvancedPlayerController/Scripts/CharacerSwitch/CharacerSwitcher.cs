@@ -7,9 +7,6 @@ public class CharacterSwitcher : MonoBehaviour
     public GameObject character1;
     public GameObject character2;
 
-    [Header("切换按键")]
-    public KeyCode switchKey = KeyCode.Tab;
-
     [Header("当前状态")]
     public bool isCharacter1Active = true;
 
@@ -38,7 +35,7 @@ public class CharacterSwitcher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(switchKey) && !isSwitching)
+        if (GameInputManager.Instance.SwitchCharacter && !isSwitching)
             SwitchCharacter();
     }
 
@@ -50,9 +47,6 @@ public class CharacterSwitcher : MonoBehaviour
 
         isSwitching = true;
 
-        /* 立即冻结当前角色，防止继续移动 */
-        FreezeMovement(GetActiveCharacter());
-
         /* 延迟真正切换 */
         StartCoroutine(DelayedSwitch());
     }
@@ -63,7 +57,6 @@ public class CharacterSwitcher : MonoBehaviour
             return;
 
         isSwitching = true;
-        FreezeMovement(GetActiveCharacter());
         StartCoroutine(DelayedSwitch(switchToCharacter1));
     }
 
@@ -84,20 +77,6 @@ public class CharacterSwitcher : MonoBehaviour
         Debug.Log($"切换到: {(isCharacter1Active ? "角色1" : "角色2")}");
 
         isSwitching = false;
-    }
-
-    /* 简单冻结：把 Rigidbody 设为 Kinematic，关闭 CharacterController */
-    private void FreezeMovement(GameObject go)
-    {
-        if (go.TryGetComponent(out Rigidbody rb))
-        {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.isKinematic = true;
-        }
-
-        if (go.TryGetComponent(out CharacterController cc))
-            cc.enabled = false;
     }
 
     public GameObject GetActiveCharacter()

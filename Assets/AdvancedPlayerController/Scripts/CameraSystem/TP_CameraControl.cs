@@ -57,8 +57,8 @@ public class TP_CameraControl : MonoBehaviour
     private void CameraInput()
     {
         // 获取相机xy轴输入
-        _input.y += GameInputManager.MainInstance.CameraLook.x * _controlSpeed;
-        _input.x -= GameInputManager.MainInstance.CameraLook.y * _controlSpeed;
+        _input.y += GameInputManager.Instance.CameraLook.x * _controlSpeed;
+        _input.x -= GameInputManager.Instance.CameraLook.y * _controlSpeed;
 
         // 限制相机垂直方向角度范围，垂直方向是绕 x 轴旋转，所以平滑的是x轴输入
         _input.x = Mathf.Clamp(

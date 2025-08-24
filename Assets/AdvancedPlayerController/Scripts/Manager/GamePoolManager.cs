@@ -62,8 +62,8 @@ public class GamePoolManager : Singleton<GamePoolManager>
                 }
             }
         }
-        Debug.Log(_poolCenter.Count);
-        Debug.Log(_poolCenter["ATKSound"].Count);
+        //Debug.Log(_poolCenter.Count);
+        //Debug.Log(_poolCenter["ATKSound"].Count);
     }
 
     /// <summary>

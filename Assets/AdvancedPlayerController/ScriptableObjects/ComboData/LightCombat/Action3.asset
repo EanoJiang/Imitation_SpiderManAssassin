@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Action3
   m_EditorClassIdentifier: 
   _comboName: Light_Atk_3
-  _comboHitName: []
+  _comboHitName:
+  - RightFace
+  - LeftFace
   _comboParryName: []
   _damage: 0
   _coldTime: 0.4

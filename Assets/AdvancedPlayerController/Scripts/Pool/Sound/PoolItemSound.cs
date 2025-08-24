@@ -56,7 +56,7 @@ public class PoolItemSound : PoolItemBase
     private void StartRecycle()
     {
         // —”≥Ÿ0.3√Î∫ÛÕ£÷π≤•∑≈
-        TimerManager.MainInstance.TryGetOneTimer(0.3f, DisableSelf);
+        TimerManager.Instance.TryGetOneTimer(0.3f, DisableSelf);
     }
 
     /// <summary>
