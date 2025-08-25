@@ -1486,6 +1486,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5ec661fe6fe24d24782bb2c8380dcdd6,
         type: 2}
+    - target: {fileID: 4737312555477580544, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 4114709d9dcb84047842780b3d211df9, type: 3}
+    - target: {fileID: 4737312555477580544, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737312555477580544, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3ae477af6b7b12648b91cca74fb975e2, type: 2}
+    - target: {fileID: 4737312555477580544, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553840589178420783, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553840589178420783, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: _rotationSmoothTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6744458660166957332, guid: fe705a7eb35a2174fb638886dc7e2ba1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1545,6 +1575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347275282331390975, guid: fe705a7eb35a2174fb638886dc7e2ba1,
+        type: 3}
+      propertyPath: m_collisionLayerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
